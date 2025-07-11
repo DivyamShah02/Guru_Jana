@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GURU & JANA - AI Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="styles_2.css" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <!-- Header -->
+    <header class="dashboard-header">
+        <div class="container-fluid">
+            <div class="row align-items-center py-3">
+                <div class="col-md-3">
+                    <div class="logo-container">
+                        <img src="assets/gurujana-logo.gif" alt="GURU & JANA" class="dashboard-logo">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="search-container">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search categories, GPTs, or ask anything..." class="search-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="header-actions">
+                        <button class="btn btn-outline-primary me-2">CA GPT MANUAL</button>
+                        <button class="btn btn-primary">AI AGENT</button>
+                        <div class="user-menu ms-3">
+                            <div class="dropdown">
+                                <button class="btn btn-link dropdown-toggle" data-bs-toggle="dropdown">
+                                    <i class="fas fa-user-circle fa-2x"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Profile</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Settings</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="index.html"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard Content -->
+    <main class="dashboard-main">
+        <div class="container-fluid">
+            <!-- Welcome Section -->
+            <div class="welcome-section">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h1 class="dashboard-title">AI-Powered CA Assistant Hub</h1>
+                        <p class="dashboard-subtitle">Choose from specialized GPT categories designed for comprehensive chartered accountancy solutions</p>
+                    </div>
+                    <div class="col-md-4 text-end">
+                        <div class="quick-stats">
+                            <div class="stat-card">
+                                <span class="stat-number">8</span>
+                                <span class="stat-label">Categories</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">25+</span>
+                                <span class="stat-label">AI Tools</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories Grid -->
+            <div class="categories-container">
+                
+                <!-- Standards & Compliance Category -->
+                <div class="category-section">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="category-info">
+                            <h3 class="category-title">Standards & Compliance</h3>
+                            <p class="category-description">Official ICAI standards and regulatory compliance tools</p>
+                        </div>
+                        <div class="category-badge">
+                            <span>4 Tools</span>
+                        </div>
+                    </div>
+                    <div class="gpt-tools-grid">
+                        <div class="gpt-tool-card">
+                            <div class="gpt-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="gpt-content">
+                                <h5>Accounting Standards Board</h5>
+                                <p>Official ICAI Accounting Standards GPT</p>
+                                <button class="btn btn-sm btn-primary">Launch</button>
+                            </div>
+                        </div>
+                        <div class="gpt-tool-card">
+                            <div class="gpt-icon">
+                                <i class="fas fa-gavel"></i>
+                            </div>
+                            <div class="gpt-content">
+                                <h5>Acts and Regulations</h5>
+                                <p>Official ICAI Acts and Regulations GPT</p>
+                                <button class="btn btn-sm btn-primary">Launch</button>
+                            </div>
+                        </div>
+                        <div class="gpt-tool-card">
+                            <div class="gpt-icon">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <div class="gpt-content">
+                                <h5>Ethical Standards Board</h5>
+                                <p>Official ICAI Ethical Standards GPT</p>
+                                <button class="btn btn-sm btn-primary">Launch</button>
+                            </div>
+                        </div>
+                        <div class="gpt-tool-card">
+                            <div class="gpt-icon">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <div class="gpt-content">
+                                <h5>Compliance Monitor</h5>
+                                <p>Real-time compliance checking tool</p>
+                                <button class="btn btn-sm btn-primary">Launch</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Auditing & Assurance Category -->
+                <div class="category-section">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="category-info">
+                            <h3 class="category-title">Auditing & Assurance</h3>
+                            <p class="category-description">Comprehensive auditing and assurance solutions</p>
+                        </div>
+                        <div class="category-badge">
+                            <span>5 Tools</span>
+                        </div>
+                    </div>
+                    <div class="gpt-tools-grid">
+                        <div class="gpt-tool-card">
+                            <div class="gpt-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="gpt-content">
+                                <h5>Auditing Standards Board</h5>
+                                <p>Official ICAI Auditing & Assurance Standards</p>
+                                <button class="btn btn-sm btn-primary">Launch</button>
+                            </div>
+                        </div>
+                        <div class="gpt-tool-card">
+                            <div class="gpt-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <div class="gpt-content">
+                                <h5>Internal Audit Assistant</h5>
+                                <p>Internal audit planning and execution</p>
+                                <button class="btn btn-sm btn-primary">Launch</button>
+                            </div>
+                        </div>
+                        <div class="gpt-tool-card">
+                            <div class="gpt-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="gpt-content">
+                                <h5>Quality Control Reviewer</h5>
+                                <p>Audit quality check and review system</p>
+                                <button class="btn btn-sm btn-primary">Launch</button>
+                            </div>
+                        </div>
+                        <div class="gpt-tool-card">
+                            <div class="gpt-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="gpt-content">
+                                <h5>Audit Report Generator</h5>
+                                <p>Automated audit report creation</p>
+                                <button class="btn btn-sm btn-primary">Launch</button>
+                            </div>
+                        </div>
+                        <div class="gpt-tool-card">
+                            <div class="gpt-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="gpt-content">
+                                <h5>Risk Assessment Tool</h5>
+                                <p>Comprehensive risk analysis and assessment</p>
+                                <button class="btn btn-sm btn-primary">Launch</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Taxation Category -->
+                <div class="category-section">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="category-info">
+                            <h3 class="category-title">Taxation</h3>
+                            <p class="category-description">Direct and indirect tax consultation and planning</p>
+                        </div>
+                        <div class="category-badge">
+                            <span>6 Tools</span>
+                        </div>
+                    </div>
+                    <div class="gpt-tools-grid">
+                        <div class="gpt-tool-card">
+                            <div class="gpt-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <div class="gpt-content">
+                                <h5>Direct Taxes Committee</h5>
+                                <p>Official ICAI Direct Taxes GPT</p>
+                                <button class="btn btn-sm btn-primary">Launch</button>
+                            </div>
+                        </div>
+                        <div class="gpt-tool-card">
+                            <div class="gpt-icon">
+                                <i class="fas fa-percentage"></i>
+                            </div>
+                            <div class="gpt-content">
+                                <h5>GST Advisor</h5>
+                                <p>Comprehensive GST guidance and calculations</p>
+                                <button class="btn btn-sm btn-primary">Launch</button>
+                            </div>
+                        </div>
+                        <div class="gpt-tool-card">
+                            <div class="gpt-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="gpt-content">
+                                <h5>Tax Planning Assistant</h5>
+                                <p>Strategic tax planning and optimization</p>
+                                <button class="btn btn-sm btn-primary">Launch</button>
+                            </div>
+                        </div>
+                        <div class="gpt-tool-card">
+                            <div class="gpt-icon">
+                                <i class="fas fa-file-invoice-dollar"></i>
+                            </div>
+                            <div class="gpt-content">
+                                <h5>Return Preparation</h5>
+                                <p>Automated tax return preparation</p>
+                                <button class="btn btn-sm btn-primary">Launch</button>
+                            </div>
+                        </div>
+                        <div class="gpt-tool-card">
+                            <div class="gpt-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="gpt-content">
+                                <h5>International Tax</h5>
+                                <p>Cross-border taxation guidance</p>
+                                <button class="btn btn-sm btn-primary">Launch</button>
+                            </div>
+                        </div>
+                        <div class="gpt-tool-card">
+                            <div class="gpt-icon">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <div class="gpt-content">
+                                <h5>TDS Calculator</h5>
+                                <p>TDS calculation and compliance tool</p>
+                                <button class="btn btn-sm btn-primary">Launch</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Corporate & Legal Category -->
+                <div class="category-section">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="category-info">
+                            <h3 class="category-title">Corporate & Legal</h3>
+                            <p class="category-description">Corporate law, governance, and legal compliance</p>
+                        </div>
+                        <div class="category-badge">
+                            <span>4 Tools</span>
+                        </div>
+                    </div>
+                    <div class="gpt-tools-grid">
+                        <div class="gpt-tool-card">
+                            <div class="gpt-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div class="gpt-content">
+                                <h5>Corporate Laws Committee</h5>
+                                <p>Corporate Laws & Governance guidance</p>
+                                <button class="btn btn-sm btn-primary">Launch</button>
+                            </div>
+                        </div>
+                        <div class="gpt-tool-card">
+                            <div class="gpt-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="gpt-content">
+                                <h5>ESOP Advisor</h5>
+                                <p>Employee Stock Option Plan guidance</p>
+                                <button class="btn btn-sm btn-primary">Launch</button>
+                            </div>
+                        </div>
+                        <div class="gpt-tool-card">
+                            <div class="gpt-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="gpt-content">
+                                <h5>M&A Assistant</h5>
+                                <p>Mergers and acquisitions support</p>
+                                <button class="btn btn-sm btn-primary">Launch</button>
+                            </div>
+                        </div>
+                        <div class="gpt-tool-card">
+                            <div class="gpt-icon">
+                                <i class="fas fa-clipboard-list"></i>
+                            </div>
+                            <div class="gpt-content">
+                                <h5>Board Resolution Helper</h5>
+                                <p>Board resolutions and corporate filings</p>
+                                <button class="btn btn-sm btn-primary">Launch</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Digital & Technology Category -->
+                <div class="category-section">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <div class="category-info">
+                            <h3 class="category-title">Digital & Technology</h3>
+                            <p class="category-description">Digital accounting and modern technology solutions</p>
+                        </div>
+                        <div class="category-badge">
+                            <span>3 Tools</span>
+                        </div>
+                    </div>
+                    <div class="gpt-tools-grid">
+                        <div class="gpt-tool-card">
+                            <div class="gpt-icon">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <div class="gpt-content">
+                                <h5>Digital Accounting Board</h5>
+                                <p>Digital Accounting and Assurance solutions</p>
+                                <button class="btn btn-sm btn-primary">Launch</button>
+                            </div>
+                        </div>
+                        <div class="gpt-tool-card">
+                            <div class="gpt-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="gpt-content">
+                                <h5>AI Automation Helper</h5>
+                                <p>Automate repetitive accounting tasks</p>
+                                <button class="btn btn-sm btn-primary">Launch</button>
+                            </div>
+                        </div>
+                        <div class="gpt-tool-card">
+                            <div class="gpt-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="gpt-content">
+                                <h5>Data Analytics Tool</h5>
+                                <p>Financial data analysis and insights</p>
+                                <button class="btn btn-sm btn-primary">Launch</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Financial Advisory Category -->
+                <div class="category-section">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div class="category-info">
+                            <h3 class="category-title">Financial Advisory</h3>
+                            <p class="category-description">Financial planning, analysis, and advisory services</p>
+                        </div>
+                        <div class="category-badge">
+                            <span>3 Tools</span>
+                        </div>
+                    </div>
+                    <div class="gpt-tools-grid">
+                        <div class="gpt-tool-card">
+                            <div class="gpt-icon">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <div class="gpt-content">
+                                <h5>Financial Planning</h5>
+                                <p>Comprehensive financial planning solutions</p>
+                                <button class="btn btn-sm btn-primary">Launch</button>
+                            </div>
+                        </div>
+                        <div class="gpt-tool-card">
+                            <div class="gpt-icon">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                            <div class="gpt-content">
+                                <h5>Investment Advisor</h5>
+                                <p>Investment analysis and recommendations</p>
+                                <button class="btn btn-sm btn-primary">Launch</button>
+                            </div>
+                        </div>
+                        <div class="gpt-tool-card">
+                            <div class="gpt-icon">
+                                <i class="fas fa-piggy-bank"></i>
+                            </div>
+                            <div class="gpt-content">
+                                <h5>Wealth Management</h5>
+                                <p>Personal and corporate wealth management</p>
+                                <button class="btn btn-sm btn-primary">Launch</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

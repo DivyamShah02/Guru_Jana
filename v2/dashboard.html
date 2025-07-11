@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GURU & JANA - Professional AI Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet"> -->
+    <link href="dashboard.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container-fluid">
+            <div class="header-content">
+                <div class="brand-section">
+                    <img src="assets/gurujana-logo.gif" alt="GURU & JANA" class="brand-logo">
+                    <!-- <div class="brand-info">
+                        <h1 class="brand-title">GURU & JANA</h1>
+                        <p class="brand-subtitle">Chartered Accountants</p>
+                    </div> -->
+                </div>
+                
+                <div class="header-center">
+                    <div class="search-section">
+                        <div class="search-wrapper">
+                            <i class="fas fa-search search-icon"></i>
+                            <input type="text" class="search-input" placeholder="Search AI assistants, ask questions, or find solutions...">
+                            <button class="voice-search-btn">
+                                <i class="fas fa-microphone"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header-actions">
+                    <button class="action-btn primary-btn">
+                        <i class="fas fa-book-open me-2"></i>
+                        CA GPT Manual
+                    </button>
+                    <!-- <button class="action-btn secondary-btn">
+                        <i class="fas fa-robot me-2"></i>
+                        AI Agent
+                    </button> -->
+                    <!-- <div class="user-profile">
+                        <div class="dropdown">
+                            <button class="profile-btn" data-bs-toggle="dropdown">
+                                <div class="profile-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="profile-info">
+                                    <span class="profile-name">CA Professional</span>
+                                    <span class="profile-role">Senior Associate</span>
+                                </div>
+                                <i class="fas fa-chevron-down profile-arrow"></i>
+                            </button>
+                            <ul class="dropdown-menu profile-dropdown">
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>My Profile</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Settings</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-history me-2"></i>Activity Log</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="index.html"><i class="fas fa-sign-out-alt me-2"></i>Sign Out</a></li>
+                            </ul>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard-main">
+        <div class="container-fluid">
+            <!-- Welcome Banner -->
+            <div class="welcome-banner">
+                <div class="welcome-content">
+                    <div class="welcome-text">
+                        <h2 class="welcome-title">Welcome to Your AI-Powered Guru & Jana CA Workspace</h2>
+                        <p class="welcome-description">Access specialized artificial intelligence tools designed specifically for chartered accountancy professionals. Choose your area of expertise below.</p>
+                    </div>
+                    <div class="welcome-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">8</div>
+                            <div class="stat-label">Specializations</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">30+</div>
+                            <div class="stat-label">AI Tools</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Available</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="tab-navigation">
+                <div class="tab-container">
+                    <button class="tab-btn active" data-tab="standards">
+                        <div class="tab-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="tab-content">
+                            <span class="tab-title">Standards & Compliance</span>
+                            <span class="tab-count">5 Tools</span>
+                        </div>
+                    </button>
+                    
+                    <button class="tab-btn" data-tab="auditing">
+                        <div class="tab-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="tab-content">
+                            <span class="tab-title">Auditing & Assurance</span>
+                            <span class="tab-count">6 Tools</span>
+                        </div>
+                    </button>
+                    
+                    <button class="tab-btn" data-tab="taxation">
+                        <div class="tab-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="tab-content">
+                            <span class="tab-title">Taxation</span>
+                            <span class="tab-count">7 Tools</span>
+                        </div>
+                    </button>
+                    
+                    <button class="tab-btn" data-tab="corporate">
+                        <div class="tab-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="tab-content">
+                            <span class="tab-title">Corporate Law</span>
+                            <span class="tab-count">4 Tools</span>
+                        </div>
+                    </button>
+                    
+                    <button class="tab-btn" data-tab="digital">
+                        <div class="tab-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <div class="tab-content">
+                            <span class="tab-title">Digital Solutions</span>
+                            <span class="tab-count">4 Tools</span>
+                        </div>
+                    </button>
+                    
+                    <button class="tab-btn" data-tab="advisory">
+                        <div class="tab-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="tab-content">
+                            <span class="tab-title">Financial Advisory</span>
+                            <span class="tab-count">4 Tools</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content-area">
+                
+                <!-- Standards & Compliance Tab -->
+                <div class="tab-pane active" id="standards">
+                    <div class="tab-header">
+                        <div class="tab-header-content">
+                            <h3 class="tab-header-title">Standards & Compliance</h3>
+                            <p class="tab-header-description">Official ICAI standards, regulations, and compliance tools for maintaining professional excellence</p>
+                        </div>
+                        <div class="tab-header-actions">
+                            <button class="filter-btn">
+                                <i class="fas fa-filter me-2"></i>Filter
+                            </button>
+                            <button class="sort-btn">
+                                <i class="fas fa-sort me-2"></i>Sort
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gpt-tools-container">
+                        <div class="gpt-tool-card featured">
+                            <div class="tool-header">
+                                <div class="tool-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div class="tool-badge">Most Popular</div>
+                            </div>
+                            <div class="tool-content">
+                                <h4 class="tool-title">Accounting Standards Board</h4>
+                                <p class="tool-description">Official ICAI Accounting Standards GPT with comprehensive AS coverage, practical examples, and real-time updates on latest amendments.</p>
+                                <div class="tool-features">
+                                    <span class="feature-tag">AS 1-29</span>
+                                    <span class="feature-tag">Ind AS</span>
+                                    <span class="feature-tag">Examples</span>
+                                </div>
+                            </div>
+                            <div class="tool-actions">
+                                <button class="tool-btn primary">
+                                    <i class="fas fa-play me-2"></i>Launch Assistant
+                                </button>
+                                <button class="tool-btn secondary">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="gpt-tool-card">
+                            <div class="tool-header">
+                                <div class="tool-icon">
+                                    <i class="fas fa-gavel"></i>
+                                </div>
+                            </div>
+                            <div class="tool-content">
+                                <h4 class="tool-title">Acts & Regulations</h4>
+                                <p class="tool-description">Comprehensive database of all relevant acts, rules, and regulations with intelligent search and cross-referencing capabilities.</p>
+                                <div class="tool-features">
+                                    <span class="feature-tag">Companies Act</span>
+                                    <span class="feature-tag">FEMA</span>
+                                    <span class="feature-tag">SEBI</span>
+                                </div>
+                            </div>
+                            <div class="tool-actions">
+                                <button class="tool-btn primary">
+                                    <i class="fas fa-play me-2"></i>Launch Assistant
+                                </button>
+                                <button class="tool-btn secondary">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="gpt-tool-card">
+                            <div class="tool-header">
+                                <div class="tool-icon">
+                                    <i class="fas fa-balance-scale"></i>
+                                </div>
+                            </div>
+                            <div class="tool-content">
+                                <h4 class="tool-title">Ethical Standards Board</h4>
+                                <p class="tool-description">Professional ethics guidance, independence requirements, and ethical dilemma resolution for CA professionals.</p>
+                                <div class="tool-features">
+                                    <span class="feature-tag">Code of Ethics</span>
+                                    <span class="feature-tag">Independence</span>
+                                    <span class="feature-tag">Guidance</span>
+                                </div>
+                            </div>
+                            <div class="tool-actions">
+                                <button class="tool-btn primary">
+                                    <i class="fas fa-play me-2"></i>Launch Assistant
+                                </button>
+                                <button class="tool-btn secondary">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="gpt-tool-card">
+                            <div class="tool-header">
+                                <div class="tool-icon">
+                                    <i class="fas fa-clipboard-check"></i>
+                                </div>
+                            </div>
+                            <div class="tool-content">
+                                <h4 class="tool-title">Compliance Monitor</h4>
+                                <p class="tool-description">Real-time compliance tracking, deadline management, and regulatory update notifications for seamless compliance management.</p>
+                                <div class="tool-features">
+                                    <span class="feature-tag">Deadlines</span>
+                                    <span class="feature-tag">Alerts</span>
+                                    <span class="feature-tag">Tracking</span>
+                                </div>
+                            </div>
+                            <div class="tool-actions">
+                                <button class="tool-btn primary">
+                                    <i class="fas fa-play me-2"></i>Launch Assistant
+                                </button>
+                                <button class="tool-btn secondary">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="gpt-tool-card">
+                            <div class="tool-header">
+                                <div class="tool-icon">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                            </div>
+                            <div class="tool-content">
+                                <h4 class="tool-title">Quality Standards Advisor</h4>
+                                <p class="tool-description">Quality control standards, peer review guidelines, and best practices for maintaining professional quality standards.</p>
+                                <div class="tool-features">
+                                    <span class="feature-tag">QC Standards</span>
+                                    <span class="feature-tag">Peer Review</span>
+                                    <span class="feature-tag">Best Practices</span>
+                                </div>
+                            </div>
+                            <div class="tool-actions">
+                                <button class="tool-btn primary">
+                                    <i class="fas fa-play me-2"></i>Launch Assistant
+                                </button>
+                                <button class="tool-btn secondary">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Auditing & Assurance Tab -->
+                <div class="tab-pane" id="auditing">
+                    <div class="tab-header">
+                        <div class="tab-header-content">
+                            <h3 class="tab-header-title">Auditing & Assurance</h3>
+                            <p class="tab-header-description">Comprehensive auditing tools, assurance standards, and quality control systems</p>
+                        </div>
+                        <div class="tab-header-actions">
+                            <button class="filter-btn">
+                                <i class="fas fa-filter me-2"></i>Filter
+                            </button>
+                            <button class="sort-btn">
+                                <i class="fas fa-sort me-2"></i>Sort
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="gpt-tools-container">
+                        <div class="gpt-tool-card featured">
+                            <div class="tool-header">
+                                <div class="tool-icon">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="tool-badge">Essential</div>
+                            </div>
+                            <div class="tool-content">
+                                <h4 class="tool-title">Auditing Standards Assistant</h4>
+                                <p class="tool-description">Complete SA coverage with practical guidance, audit procedures, and documentation templates for efficient audit execution.</p>
+                                <div class="tool-features">
+                                    <span class="feature-tag">SA Standards</span>
+                                    <span class="feature-tag">Procedures</span>
+                                    <span class="feature-tag">Templates</span>
+                                </div>
+                            </div>
+                            <div class="tool-actions">
+                                <button class="tool-btn primary">
+                                    <i class="fas fa-play me-2"></i>Launch Assistant
+                                </button>
+                                <button class="tool-btn secondary">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="gpt-tool-card">
+                            <div class="tool-header">
+                                <div class="tool-icon">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                            </div>
+                            <div class="tool-content">
+                                <h4 class="tool-title">Internal Audit Planner</h4>
+                                <p class="tool-description">Strategic internal audit planning, risk assessment, and audit program development with industry-specific templates.</p>
+                                <div class="tool-features">
+                                    <span class="feature-tag">Risk Assessment</span>
+                                    <span class="feature-tag">Planning</span>
+                                    <span class="feature-tag">Programs</span>
+                                </div>
+                            </div>
+                            <div class="tool-actions">
+                                <button class="tool-btn primary">
+                                    <i class="fas fa-play me-2"></i>Launch Assistant
+                                </button>
+                                <button class="tool-btn secondary">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Add more auditing tools here -->
+                    </div>
+                </div>
+
+                <!-- Other tabs content will be similar structure -->
+                <div class="tab-pane" id="taxation">
+                    <div class="tab-header">
+                        <div class="tab-header-content">
+                            <h3 class="tab-header-title">Taxation</h3>
+                            <p class="tab-header-description">Direct taxes, indirect taxes, and comprehensive tax planning solutions</p>
+                        </div>
+                    </div>
+                    <div class="gpt-tools-container">
+                        <div class="coming-soon-message">
+                            <i class="fas fa-calculator fa-3x mb-3"></i>
+                            <h4>Taxation Tools Coming Soon</h4>
+                            <p>Advanced tax calculation and planning tools are being prepared for launch.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Placeholder for other tabs -->
+                <div class="tab-pane" id="corporate">
+                    <div class="tab-header">
+                        <div class="tab-header-content">
+                            <h3 class="tab-header-title">Corporate Law</h3>
+                            <p class="tab-header-description">Corporate governance, legal compliance, and regulatory guidance</p>
+                        </div>
+                    </div>
+                    <div class="gpt-tools-container">
+                        <div class="coming-soon-message">
+                            <i class="fas fa-building fa-3x mb-3"></i>
+                            <h4>Corporate Law Tools Coming Soon</h4>
+                            <p>Comprehensive corporate law assistance tools in development.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="digital">
+                    <div class="tab-header">
+                        <div class="tab-header-content">
+                            <h3 class="tab-header-title">Digital Solutions</h3>
+                            <p class="tab-header-description">Digital accounting, automation, and technology integration</p>
+                        </div>
+                    </div>
+                    <div class="gpt-tools-container">
+                        <div class="coming-soon-message">
+                            <i class="fas fa-laptop fa-3x mb-3"></i>
+                            <h4>Digital Solutions Coming Soon</h4>
+                            <p>Cutting-edge digital accounting tools being finalized.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="advisory">
+                    <div class="tab-header">
+                        <div class="tab-header-content">
+                            <h3 class="tab-header-title">Financial Advisory</h3>
+                            <p class="tab-header-description">Financial planning, investment advice, and wealth management</p>
+                        </div>
+                    </div>
+                    <div class="gpt-tools-container">
+                        <div class="coming-soon-message">
+                            <i class="fas fa-chart-line fa-3x mb-3"></i>
+                            <h4>Advisory Tools Coming Soon</h4>
+                            <p>Professional financial advisory tools under development.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
