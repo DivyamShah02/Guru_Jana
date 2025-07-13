@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
+    <link href="static/css/dashboard-styles.css" rel="stylesheet">
 </head>
 <body class="dashboard-body">
     <!-- Header -->
@@ -28,9 +28,7 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="header-actions">
-                        <button class="btn btn-outline-primary me-2">CA GPT MANUAL</button>
-                        <button class="btn btn-primary">AI AGENT</button>
+                    <div class="header-actions">                       
                         <div class="user-menu ms-3">
                             <div class="dropdown">
                                 <button class="btn btn-link dropdown-toggle" data-bs-toggle="dropdown">
@@ -58,13 +56,13 @@
                 <div class="row align-items-center">
                     <div class="col-md-8">
                         <h1 class="welcome-title">Welcome to AI-Powered CA Dashboard</h1>
-                        <p class="welcome-subtitle">Access specialized GPT tools for comprehensive chartered accountancy solutions</p>
+                        <p class="welcome-subtitle">Access specialized GPT tools organized by practice areas</p>
                     </div>
                     <div class="col-md-4 text-end">
                         <div class="dashboard-stats">
                             <div class="stat-item">
-                                <span class="stat-number">10</span>
-                                <span class="stat-label">AI Tools</span>
+                                <span class="stat-number">5</span>
+                                <span class="stat-label">Categories</span>
                             </div>
                             <div class="stat-item">
                                 <span class="stat-number">24/7</span>
@@ -75,248 +73,247 @@
                 </div>
             </div>
 
-            <!-- AI Tools Grid -->
-            <div class="tools-grid">
-                <div class="row g-4">
-                    <!-- Accounting Standards Board -->
-                    <div class="col-lg-6">
-                        <div class="tool-card">
-                            <div class="tool-content">
-                                <div class="tool-header">
-                                    <h5 class="tool-title">Accounting Standards Board</h5>
-                                    <div class="tool-icon">
-                                        <div class="icon-circle">
-                                            <i class="fas fa-book"></i>
+            <!-- Category Navigation Tabs -->
+            <div class="category-navigation">
+                <ul class="nav nav-pills nav-fill category-tabs" id="categoryTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="statutory-audit-tab" data-bs-toggle="pill" data-bs-target="#statutory-audit" type="button" role="tab" aria-controls="statutory-audit" aria-selected="true">
+                            <i class="fas fa-search me-2"></i>
+                            <span class="tab-text">Statutory Audit</span>
+                            <span class="badge bg-light text-dark ms-2">3</span>
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="internal-audit-tab" data-bs-toggle="pill" data-bs-target="#internal-audit" type="button" role="tab" aria-controls="internal-audit" aria-selected="false">
+                            <i class="fas fa-chart-bar me-2"></i>
+                            <span class="tab-text">Internal Audit</span>
+                            <span class="badge bg-warning text-dark ms-2">Soon</span>
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="direct-tax-tab" data-bs-toggle="pill" data-bs-target="#direct-tax" type="button" role="tab" aria-controls="direct-tax" aria-selected="false">
+                            <i class="fas fa-calculator me-2"></i>
+                            <span class="tab-text">Direct Tax</span>
+                            <span class="badge bg-warning text-dark ms-2">Soon</span>
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="indirect-tax-tab" data-bs-toggle="pill" data-bs-target="#indirect-tax" type="button" role="tab" aria-controls="indirect-tax" aria-selected="false">
+                            <i class="fas fa-percentage me-2"></i>
+                            <span class="tab-text">Indirect Tax</span>
+                            <span class="badge bg-warning text-dark ms-2">Soon</span>
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="consulting-tab" data-bs-toggle="pill" data-bs-target="#consulting" type="button" role="tab" aria-controls="consulting" aria-selected="false">
+                            <i class="fas fa-handshake me-2"></i>
+                            <span class="tab-text">Consulting</span>
+                            <span class="badge bg-warning text-dark ms-2">Soon</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="categoryTabContent">
+                <!-- Statutory Audit Tab -->
+                <div class="tab-pane fade show active" id="statutory-audit" role="tabpanel" aria-labelledby="statutory-audit-tab">
+                    <div class="tools-grid">
+                        <div class="row g-4">
+                            <!-- Audit QC -->
+                            <div class="col-lg-6">
+                                <div class="tool-card">
+                                    <div class="tool-content">
+                                        <div class="tool-header">
+                                            <h5 class="tool-title">Audit QC</h5>
+                                            <div class="tool-icon">
+                                                <div class="icon-circle">
+                                                    <i class="fas fa-check-circle"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="tool-description">Quality control and review system for audit processes</p>
+                                        <div class="tool-actions">
+                                            <button class="btn btn-primary btn-sm">
+                                                <i class="fas fa-play me-2"></i>Launch
+                                            </button>
+                                            <button class="btn btn-outline-secondary btn-sm">
+                                                <i class="fas fa-info-circle"></i>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="tool-description">Official ICAI Accounting Standards GPT</p>
-                                <div class="tool-actions">
-                                    <button class="btn btn-primary btn-sm">
-                                        <i class="fas fa-play me-2"></i>Launch
-                                    </button>
-                                    <button class="btn btn-outline-secondary btn-sm">
-                                        <i class="fas fa-info-circle"></i>
-                                    </button>
+                            </div>
+
+                            <!-- ESOP GPT -->
+                            <div class="col-lg-6">
+                                <div class="tool-card">
+                                    <div class="tool-content">
+                                        <div class="tool-header">
+                                            <h5 class="tool-title">ESOP GPT</h5>
+                                            <div class="tool-icon">
+                                                <div class="icon-circle">
+                                                    <i class="fas fa-users"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="tool-description">Employee Stock Option Plan guidance and compliance</p>
+                                        <div class="tool-actions">
+                                            <button class="btn btn-primary btn-sm">
+                                                <i class="fas fa-play me-2"></i>Launch
+                                            </button>
+                                            <button class="btn btn-outline-secondary btn-sm">
+                                                <i class="fas fa-info-circle"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SAMPLE -->
+                            <div class="col-lg-6">
+                                <div class="tool-card">
+                                    <div class="tool-content">
+                                        <div class="tool-header">
+                                            <h5 class="tool-title">SAMPLE</h5>
+                                            <div class="tool-icon">
+                                                <div class="icon-circle">
+                                                    <i class="fas fa-file-alt"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="tool-description">Sample audit procedures and documentation templates</p>
+                                        <div class="tool-actions">
+                                            <button class="btn btn-primary btn-sm">
+                                                <i class="fas fa-play me-2"></i>Launch
+                                            </button>
+                                            <button class="btn btn-outline-secondary btn-sm">
+                                                <i class="fas fa-info-circle"></i>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Acts and Regulations -->
-                    <div class="col-lg-6">
-                        <div class="tool-card">
-                            <div class="tool-content">
-                                <div class="tool-header">
-                                    <h5 class="tool-title">Acts and Regulations</h5>
-                                    <div class="tool-icon">
-                                        <div class="icon-circle">
-                                            <i class="fas fa-gavel"></i>
-                                        </div>
-                                    </div>
+                <!-- Internal Audit Tab -->
+                <div class="tab-pane fade" id="internal-audit" role="tabpanel" aria-labelledby="internal-audit-tab">
+                    <div class="coming-soon-container">
+                        <div class="coming-soon-content">
+                            <i class="fas fa-chart-bar coming-soon-icon"></i>
+                            <h3 class="coming-soon-title">Internal Audit Tools</h3>
+                            <p class="coming-soon-description">Advanced internal audit and management accounting tools are coming soon. Stay tuned for comprehensive solutions.</p>
+                            <div class="coming-soon-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check text-primary me-2"></i>
+                                    <span>Risk Assessment Tools</span>
                                 </div>
-                                <p class="tool-description">Official ICAI Acts and Regulations GPT</p>
-                                <div class="tool-actions">
-                                    <button class="btn btn-primary btn-sm">
-                                        <i class="fas fa-play me-2"></i>Launch
-                                    </button>
-                                    <button class="btn btn-outline-secondary btn-sm">
-                                        <i class="fas fa-info-circle"></i>
-                                    </button>
+                                <div class="feature-item">
+                                    <i class="fas fa-check text-primary me-2"></i>
+                                    <span>Internal Control Evaluation</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check text-primary me-2"></i>
+                                    <span>Management Reporting</span>
                                 </div>
                             </div>
+                            <button class="btn btn-outline-primary mt-3">
+                                <i class="fas fa-bell me-2"></i>Notify Me
+                            </button>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Auditing & Assurance Standards Board -->
-                    <div class="col-lg-6">
-                        <div class="tool-card">
-                            <div class="tool-content">
-                                <div class="tool-header">
-                                    <h5 class="tool-title">Auditing & Assurance Standards Board</h5>
-                                    <div class="tool-icon">
-                                        <div class="icon-circle">
-                                            <i class="fas fa-search"></i>
-                                        </div>
-                                    </div>
+                <!-- Direct Tax Tab -->
+                <div class="tab-pane fade" id="direct-tax" role="tabpanel" aria-labelledby="direct-tax-tab">
+                    <div class="coming-soon-container">
+                        <div class="coming-soon-content">
+                            <i class="fas fa-calculator coming-soon-icon"></i>
+                            <h3 class="coming-soon-title">Direct Tax Solutions</h3>
+                            <p class="coming-soon-description">Comprehensive direct tax planning and compliance tools are under development. Get ready for AI-powered tax solutions.</p>
+                            <div class="coming-soon-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check text-primary me-2"></i>
+                                    <span>Income Tax Planning</span>
                                 </div>
-                                <p class="tool-description">Official ICAI Auditing & Assurance Standards GPT</p>
-                                <div class="tool-actions">
-                                    <button class="btn btn-primary btn-sm">
-                                        <i class="fas fa-play me-2"></i>Launch
-                                    </button>
-                                    <button class="btn btn-outline-secondary btn-sm">
-                                        <i class="fas fa-info-circle"></i>
-                                    </button>
+                                <div class="feature-item">
+                                    <i class="fas fa-check text-primary me-2"></i>
+                                    <span>Return Preparation</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check text-primary me-2"></i>
+                                    <span>Tax Optimization</span>
                                 </div>
                             </div>
+                            <button class="btn btn-outline-primary mt-3">
+                                <i class="fas fa-bell me-2"></i>Notify Me
+                            </button>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Board of Internal Audit & Management Accounting -->
-                    <div class="col-lg-6">
-                        <div class="tool-card">
-                            <div class="tool-content">
-                                <div class="tool-header">
-                                    <h5 class="tool-title">Board of Internal Audit & Management Accounting</h5>
-                                    <div class="tool-icon">
-                                        <div class="icon-circle">
-                                            <i class="fas fa-chart-bar"></i>
-                                        </div>
-                                    </div>
+                <!-- Indirect Tax Tab -->
+                <div class="tab-pane fade" id="indirect-tax" role="tabpanel" aria-labelledby="indirect-tax-tab">
+                    <div class="coming-soon-container">
+                        <div class="coming-soon-content">
+                            <i class="fas fa-percentage coming-soon-icon"></i>
+                            <h3 class="coming-soon-title">Indirect Tax Tools</h3>
+                            <p class="coming-soon-description">GST, customs, and other indirect tax management tools are being developed to streamline your compliance processes.</p>
+                            <div class="coming-soon-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check text-primary me-2"></i>
+                                    <span>GST Compliance</span>
                                 </div>
-                                <p class="tool-description">Official ICAI Internal Audit & Management Accounting GPT</p>
-                                <div class="tool-actions">
-                                    <button class="btn btn-primary btn-sm">
-                                        <i class="fas fa-play me-2"></i>Launch
-                                    </button>
-                                    <button class="btn btn-outline-secondary btn-sm">
-                                        <i class="fas fa-info-circle"></i>
-                                    </button>
+                                <div class="feature-item">
+                                    <i class="fas fa-check text-primary me-2"></i>
+                                    <span>Customs Documentation</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check text-primary me-2"></i>
+                                    <span>VAT Management</span>
                                 </div>
                             </div>
+                            <button class="btn btn-outline-primary mt-3">
+                                <i class="fas fa-bell me-2"></i>Notify Me
+                            </button>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Corporate Laws & Corporate Governance Committee -->
-                    <div class="col-lg-6">
-                        <div class="tool-card">
-                            <div class="tool-content">
-                                <div class="tool-header">
-                                    <h5 class="tool-title">Corporate Laws & Corporate Governance Committee</h5>
-                                    <div class="tool-icon">
-                                        <div class="icon-circle">
-                                            <i class="fas fa-building"></i>
-                                        </div>
-                                    </div>
+                <!-- Consulting Tab -->
+                <div class="tab-pane fade" id="consulting" role="tabpanel" aria-labelledby="consulting-tab">
+                    <div class="coming-soon-container">
+                        <div class="coming-soon-content">
+                            <i class="fas fa-handshake coming-soon-icon"></i>
+                            <h3 class="coming-soon-title">Consulting Services</h3>
+                            <p class="coming-soon-description">AI-powered consulting and advisory tools for strategic business decisions and financial planning are coming soon.</p>
+                            <div class="coming-soon-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check text-primary me-2"></i>
+                                    <span>Financial Advisory</span>
                                 </div>
-                                <p class="tool-description">Official ICAI Corporate Laws & Corporate Governance Committee GPT</p>
-                                <div class="tool-actions">
-                                    <button class="btn btn-primary btn-sm">
-                                        <i class="fas fa-play me-2"></i>Launch
-                                    </button>
-                                    <button class="btn btn-outline-secondary btn-sm">
-                                        <i class="fas fa-info-circle"></i>
-                                    </button>
+                                <div class="feature-item">
+                                    <i class="fas fa-check text-primary me-2"></i>
+                                    <span>Business Valuation</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check text-primary me-2"></i>
+                                    <span>Strategic Planning</span>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Digital Accounting and Assurance Board -->
-                    <div class="col-lg-6">
-                        <div class="tool-card">
-                            <div class="tool-content">
-                                <div class="tool-header">
-                                    <h5 class="tool-title">Digital Accounting and Assurance Board</h5>
-                                    <div class="tool-icon">
-                                        <div class="icon-circle">
-                                            <i class="fas fa-laptop"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="tool-description">Official ICAI Digital Accounting and Assurance GPT</p>
-                                <div class="tool-actions">
-                                    <button class="btn btn-primary btn-sm">
-                                        <i class="fas fa-play me-2"></i>Launch
-                                    </button>
-                                    <button class="btn btn-outline-secondary btn-sm">
-                                        <i class="fas fa-info-circle"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Direct Taxes Committee -->
-                    <div class="col-lg-6">
-                        <div class="tool-card">
-                            <div class="tool-content">
-                                <div class="tool-header">
-                                    <h5 class="tool-title">Direct Taxes Committee</h5>
-                                    <div class="tool-icon">
-                                        <div class="icon-circle">
-                                            <i class="fas fa-calculator"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="tool-description">Official ICAI Direct Taxes GPT</p>
-                                <div class="tool-actions">
-                                    <button class="btn btn-primary btn-sm">
-                                        <i class="fas fa-play me-2"></i>Launch
-                                    </button>
-                                    <button class="btn btn-outline-secondary btn-sm">
-                                        <i class="fas fa-info-circle"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Ethical Standards Board -->
-                    <div class="col-lg-6">
-                        <div class="tool-card">
-                            <div class="tool-content">
-                                <div class="tool-header">
-                                    <h5 class="tool-title">Ethical Standards Board</h5>
-                                    <div class="tool-icon">
-                                        <div class="icon-circle">
-                                            <i class="fas fa-balance-scale"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="tool-description">Official ICAI Ethical Standards GPT</p>
-                                <div class="tool-actions">
-                                    <button class="btn btn-primary btn-sm">
-                                        <i class="fas fa-play me-2"></i>Launch
-                                    </button>
-                                    <button class="btn btn-outline-secondary btn-sm">
-                                        <i class="fas fa-info-circle"></i>
-                                    </button>
-                                </div>
-                            </div>
+                            <button class="btn btn-outline-primary mt-3">
+                                <i class="fas fa-bell me-2"></i>Notify Me
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Quick Actions -->
-            <!-- <div class="quick-actions mt-5">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="action-card">
-                            <i class="fas fa-history"></i>
-                            <h6>Recent Activity</h6>
-                            <p>View your recent AI interactions</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="action-card">
-                            <i class="fas fa-bookmark"></i>
-                            <h6>Saved Queries</h6>
-                            <p>Access your bookmarked queries</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="action-card">
-                            <i class="fas fa-download"></i>
-                            <h6>Export Reports</h6>
-                            <p>Download AI-generated reports</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="action-card">
-                            <i class="fas fa-question-circle"></i>
-                            <h6>Help & Support</h6>
-                            <p>Get assistance with AI tools</p>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="static/js/dashboard-script.js"></script>
 </body>
 </html>

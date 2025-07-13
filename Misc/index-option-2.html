@@ -38,12 +38,87 @@
                         <button class="btn btn-outline-primary me-2">CA GPT MANUAL</button>
                     </li> -->
                     <li class="nav-item">
-                        <button class="btn btn-primary">AI AGENT</button>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#employeeModal">AI TOOLS ACCESS</button>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
+    <!-- Modal -->
+    <div class="modal fade" id="employeeModal" tabindex="-1" aria-labelledby="employeeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="employeeModalLabel">Employee Login</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <!-- Your Provided Content -->
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                <div class="">
+                    <div class="text-center mb-4">
+                    <h2 class="section-title">Employee Portal Access</h2>
+                    <p class="section-subtitle">Secure access to AI-powered CA tools for authorized personnel</p>
+                    </div>
+
+                    <!-- Login Form -->
+                    <div class="login-form-container">
+                    <form class="login-form">
+                        <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                            <label class="form-label">Employee ID</label>
+                            <input type="text" class="form-control" placeholder="Enter your Employee ID">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" placeholder="Enter your Password">
+                            </div>
+                        </div>
+                        </div>
+                        <div class="form-options d-flex justify-content-between align-items-center my-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                        </div>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg w-100">
+                        <i class="fas fa-sign-in-alt me-2"></i>Access Dashboard
+                        </button>
+                    </form>
+                    </div>
+
+                    <div class="login-info mt-4">
+                    <div class="info-card d-flex align-items-start mb-3">
+                        <i class="fas fa-shield-alt fa-2x me-3 mt-1"></i>
+                        <div>
+                        <h6>Secure Access</h6>
+                        <p class="mb-0">Multi-factor authentication ensures your data security</p>
+                        </div>
+                    </div>
+                    <div class="info-card d-flex align-items-start">
+                        <i class="fas fa-clock fa-2x me-3 mt-1"></i>
+                        <div>
+                        <h6>24/7 Availability</h6>
+                        <p class="mb-0">Access AI tools anytime, anywhere</p>
+                        </div>
+                    </div>
+                    </div>
+                </div> <!-- .login-container -->
+                </div>
+            </div>
+            
+            <!-- End Content -->
+        </div>
+        </div>
+    </div>
+    </div>
 
     <!-- Hero Section Option 2: Interactive Dashboard Preview -->
     <section id="home" class="hero-section" style="margin-top: 5rem;">
@@ -51,20 +126,15 @@
             <div class="row align-items-center min-vh-100">
                 <div class="col-lg-6">
                     <div class="hero-content">
-                        <div class="hero-tag">
-                            <span class="tag-icon">🚀</span>
-                            Next-Generation CA Solutions
+                        <div class="hero-tag"><i class="fas fa-robot me-2"></i>
+                            AI-Powered Excellence
                         </div>
-                        
-                        <h1 class="hero-title">
-                            Transforming Finance with AI — <br>
-                            <span class="gradient-text">The Gurujana Way</span>
+                        <h1 class="hero-title" style="margin-bottom: 0px;">GuruJana.ai<br>
+                            <span class=""></span>
                         </h1>
-                        
-                        <p class="hero-description">
-                            Gurujana.ai is the AI-powered extension of Guru & Jana, delivering department-specific GPT tools for auditing, taxation, and consulting.
-                        </p>
-
+                        <b>
+                            <p class="hero-description" style="margin-left: 32px;">Transforming Finance with AI</p>
+                        </b>
                         <div class="achievement-grid">
                             <div class="achievement-item">
                                 <div class="achievement-icon">
@@ -85,7 +155,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="cta-section">
                             <a href="#" class="btn btn-primary btn-lg">
                                 <i class="fas fa-play me-2"></i>Welcome from Guru

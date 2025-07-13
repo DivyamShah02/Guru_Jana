@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
+    <link href="static/css/styles.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -21,7 +21,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
@@ -32,77 +32,257 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                    <li class="nav-item ms-3">
+                    </li> -->
+                    <!-- <li class="nav-item ms-3">
                         <button class="btn btn-outline-primary me-2">CA GPT MANUAL</button>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
-                        <button class="btn btn-primary">AI AGENT</button>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#employeeModal">AI TOOLS ACCESS</button>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Modal -->
+    <div class="modal fade" id="employeeModal" tabindex="-1" aria-labelledby="employeeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="employeeModalLabel">Employee Login</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <!-- Your Provided Content -->
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                <div class="">
+                    <div class="text-center mb-4">
+                    <h2 class="section-title">Employee Portal Access</h2>
+                    <p class="section-subtitle">Secure access to AI-powered CA tools for authorized personnel</p>
+                    </div>
+
+                    <!-- Login Form -->
+                    <div class="login-form-container">
+                    <form class="login-form">
+                        <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                            <label class="form-label">Employee ID</label>
+                            <input type="text" class="form-control" placeholder="Enter your Employee ID">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" placeholder="Enter your Password">
+                            </div>
+                        </div>
+                        </div>
+                        <div class="form-options d-flex justify-content-between align-items-center my-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                        </div>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg w-100">
+                        <i class="fas fa-sign-in-alt me-2"></i>Access Dashboard
+                        </button>
+                    </form>
+                    </div>
+
+                    <div class="login-info mt-4">
+                    <div class="info-card d-flex align-items-start mb-3">
+                        <i class="fas fa-shield-alt fa-2x me-3 mt-1"></i>
+                        <div>
+                        <h6>Secure Access</h6>
+                        <p class="mb-0">Multi-factor authentication ensures your data security</p>
+                        </div>
+                    </div>
+                    <div class="info-card d-flex align-items-start">
+                        <i class="fas fa-clock fa-2x me-3 mt-1"></i>
+                        <div>
+                        <h6>24/7 Availability</h6>
+                        <p class="mb-0">Access AI tools anytime, anywhere</p>
+                        </div>
+                    </div>
+                    </div>
+                </div> <!-- .login-container -->
+                </div>
+            </div>
+            
+            <!-- End Content -->
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Hero Section Option 2: Interactive Dashboard Preview -->
     <section id="home" class="hero-section" style="margin-top: 5rem;">
         <div class="container">
             <div class="row align-items-center min-vh-100">
                 <div class="col-lg-6">
                     <div class="hero-content">
-                        <h1 class="hero-title">
-                            AI-Powered <u><em>Chartered Accountancy</em></u> Solutions
+                        <div class="hero-tag"><i class="fas fa-robot me-2"></i>
+                            AI-Powered Excellence
+                        </div>
+                        <h1 class="hero-title" style="margin-bottom: 0px;">GuruJana.ai<br>
+                            <span class=""></span>
                         </h1>
-                        <p class="hero-subtitle">
-                            Revolutionizing CA practices with cutting-edge AI technology. Access specialized GPT tools for every aspect of chartered accountancy - from auditing to taxation, compliance to advisory services.
-                        </p>
-                        <div class="hero-stats">
-                            <div class="stat-item">
-                                <h3>10+</h3>
-                                <p>AI Departments</p>
+                        <b>
+                            <p class="hero-description" style="margin-left: 32px;">Transforming Finance with AI</p>
+                        </b>
+                        <div class="achievement-grid">
+                            <div class="achievement-item">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="achievement-content">
+                                    <h4>10+ AI Departments</h4>
+                                    <p>Specialized GPT tools</p>
+                                </div>
                             </div>
-                            <div class="stat-item">
-                                <h3>500+</h3>
-                                <p>CA Professionals</p>
-                            </div>
-                            <div class="stat-item">
-                                <h3>24/7</h3>
-                                <p>AI Support</p>
+                            <div class="achievement-item">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="achievement-content">
+                                    <h4>500+ Professionals</h4>
+                                    <p>Trust our platform</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="hero-buttons">
-                            <a href="#services" class="btn btn-primary btn-lg me-3">
-                                <i class="fas fa-rocket me-2"></i>Explore AI Tools
+                        <div class="cta-section">
+                            <a href="#" class="btn btn-primary btn-lg">
+                                <i class="fas fa-play me-2"></i>Welcome from Guru
                             </a>
                             <a href="#login" class="btn btn-outline-light btn-lg">
-                                <i class="fas fa-sign-in-alt me-2"></i>Employee Access
+                                <i class="fas fa-sign-in-alt me-2"></i>Employee Portal
                             </a>
                         </div>
                     </div>
                 </div>
+                
                 <div class="col-lg-6">
-                    <div class="hero-image">
-                        <div class="floating-elements">
-                            <div class="floating-card card-1">
-                                <i class="fas fa-calculator"></i>
-                                <span>Tax Calculations</span>
+                    <div class="dashboard-preview">
+                        <div class="preview-header">
+                            <div class="header-controls">
+                                <div class="control-dot red"></div>
+                                <div class="control-dot yellow"></div>
+                                <div class="control-dot green"></div>
                             </div>
-                            <div class="floating-card card-2">
-                                <i class="fas fa-chart-line"></i>
-                                <span>Financial Analysis</span>
-                            </div>
-                            <div class="floating-card card-3">
-                                <i class="fas fa-balance-scale"></i>
-                                <span>Compliance Check</span>
-                            </div>
-                            <div class="floating-card card-4">
-                                <i class="fas fa-file-invoice"></i>
-                                <span>Audit Reports</span>
-                            </div>
+                            <div class="header-title">CA AI Dashboard</div>
                         </div>
-                        <div class="hero-illustration">
-                            <div class="ai-brain">
-                                <i class="fas fa-brain"></i>
+                        
+                        <div class="preview-content">
+                            <div class="dashboard-nav">
+                                <div class="nav-item active" data-tab="overview">
+                                    <i class="fas fa-chart-pie"></i>
+                                    <span>Overview</span>
+                                </div>
+                                <div class="nav-item" data-tab="taxation">
+                                    <i class="fas fa-calculator"></i>
+                                    <span>Taxation</span>
+                                </div>
+                                <div class="nav-item" data-tab="auditing">
+                                    <i class="fas fa-search"></i>
+                                    <span>Auditing</span>
+                                </div>
+                                <div class="nav-item" data-tab="compliance">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Compliance</span>
+                                </div>
+                            </div>
+                            
+                            <div class="dashboard-content">
+                                <div class="content-panel active" id="overview">
+                                    <div class="panel-header">
+                                        <h3>AI Analytics Overview</h3>
+                                        <div class="status-indicator">
+                                            <div class="status-dot"></div>
+                                            <span>Live</span>
+                                        </div>
+                                    </div>
+                                    <div class="metrics-grid">
+                                        <div class="metric-card">
+                                            <div class="metric-value">₹2.4Cr</div>
+                                            <div class="metric-label">Processed</div>
+                                        </div>
+                                        <div class="metric-card">
+                                            <div class="metric-value">98%</div>
+                                            <div class="metric-label">Accuracy</div>
+                                        </div>
+                                        <div class="metric-card">
+                                            <div class="metric-value">156</div>
+                                            <div class="metric-label">Cases</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="content-panel" id="taxation">
+                                    <div class="panel-header">
+                                        <h3>Tax AI Assistant</h3>
+                                        <div class="ai-badge">AI Powered</div>
+                                    </div>
+                                    <div class="feature-list">
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Income Tax Calculations</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>TDS/TCS Management</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Tax Planning Strategies</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="content-panel" id="auditing">
+                                    <div class="panel-header">
+                                        <h3>Audit Intelligence</h3>
+                                        <div class="ai-badge">Smart Analysis</div>
+                                    </div>
+                                    <div class="feature-list">
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Risk Assessment</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Audit Trail Analysis</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Compliance Verification</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="content-panel" id="compliance">
+                                    <div class="panel-header">
+                                        <h3>Compliance Monitor</h3>
+                                        <div class="ai-badge">Real-time</div>
+                                    </div>
+                                    <div class="feature-list">
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Regulatory Updates</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Deadline Tracking</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Document Management</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -148,77 +328,7 @@
         </div>
     </section>
 
-    <!-- Employee Login Section -->
-    <section id="login" class="login-section py-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="login-container">
-                        <div class="text-center mb-4">
-                            <h2 class="section-title">Employee Portal Access</h2>
-                            <p class="section-subtitle">Secure access to AI-powered CA tools for authorized personnel</p>
-                        </div>
-
-                        <!-- Login Tabs -->
-                        <!-- <div class="login-tabs">
-                            <button class="tab-btn active">Employee Login</button>
-                            <button class="tab-btn">Admin Login</button>
-                            <button class="tab-btn">Guest Access</button>
-                        </div> -->
-
-                        <!-- Login Form -->
-                        <div class="login-form-container">
-                            <form class="login-form">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="form-label">Employee ID</label>
-                                            <input type="text" class="form-control" placeholder="Enter your Employee ID">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="form-label">Password</label>
-                                            <input type="password" class="form-control" placeholder="Enter your Password">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-options">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="rememberMe">
-                                        <label class="form-check-label" for="rememberMe">Remember me</label>
-                                    </div>
-                                    <a href="#" class="forgot-password">Forgot Password?</a>
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-lg w-100">
-                                    <i class="fas fa-sign-in-alt me-2"></i>Access Dashboard
-                                </button>
-                            </form>
-                        </div>
-
-                        <div class="login-info">
-                            <div class="info-card">
-                                <i class="fas fa-shield-alt"></i>
-                                <div>
-                                    <h6>Secure Access</h6>
-                                    <p>Multi-factor authentication ensures your data security</p>
-                                </div>
-                            </div>
-                            <div class="info-card">
-                                <i class="fas fa-clock"></i>
-                                <div>
-                                    <h6>24/7 Availability</h6>
-                                    <p>Access AI tools anytime, anywhere</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-        <!-- AI Services Section -->
+    <!-- AI Services Section -->
     <section id="services" class="services-section py-5">
         <div class="container">
             <div class="text-center mb-5">
@@ -394,7 +504,7 @@
         </div>
     </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>    
+    <script src="static/js/script.js"></script>
 </body>
 </html>

@@ -37,7 +37,7 @@ body {
 }
 
 .navbar-brand img {
-  border-radius: 8px;
+  /* border-radius: 8px; */
   transition: transform 0.3s ease;
 }
 
