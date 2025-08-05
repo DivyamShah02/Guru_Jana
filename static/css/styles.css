@@ -55,7 +55,8 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  /* background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); */
+  background: var(--primary-color);
   border: none;
   border-radius: 8px;
   font-weight: 600;
@@ -84,7 +85,8 @@ body {
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  /* background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); */
+  background: var(--primary-color);
   color: white;
   position: relative;
   overflow: hidden;
@@ -557,7 +559,8 @@ body {
 .service-icon {
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  /* background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); */
+  background: var(--primary-color);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -829,7 +832,8 @@ body {
 }
 
 .welcome-banner {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  /* background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); */
+  background: var(--primary-color);
   color: white;
   border-radius: 16px;
   padding: 3rem;
@@ -900,7 +904,8 @@ body {
 }
 
 .category-tabs .nav-link.active {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  /* background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); */
+  background: var(--primary-color);
   color: white;
   box-shadow: var(--shadow-sm);
 }
@@ -953,7 +958,8 @@ body {
 .icon-circle {
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  /* background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); */
+  background: var(--primary-color);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -995,7 +1001,8 @@ body {
 .coming-soon-icon {
   width: 100px;
   height: 100px;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  /* background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); */
+  background: var(--primary-color);
   border-radius: 50%;
   display: flex;
   align-items: center;
