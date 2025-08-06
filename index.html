@@ -7,75 +7,368 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
     <link href="static/css/styles.css" rel="stylesheet">
     <style>
-        /* Timeline Styles */
-        .timeline {
-            position: relative;
-            padding: 2rem 0;
+          .portrait-video-container {
+    position: relative;
+    width: 100%;
+    padding-top: 177.77%; /* 16:9 = 56.25%, so 9:16 = 177.77% */
+  }
+
+  .portrait-video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+        .about-content {
+            text-align: center;
+            margin-bottom: 3rem;
         }
-        
-        .timeline::before {
+
+        .about-content .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .about-content .section-title::after {
             content: '';
             position: absolute;
-            left: 30px;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        .about-content .lead {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--gray-700);
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about-content p:first-of-type {
+            font-weight: 500;
+            color: var(--gray-800);
+        }
+
+
+
+        /* Enhanced Zig-Zag Timeline Styles */
+        .timeline-container {
+            position: relative;
+            padding: 3rem 0;
+            overflow: hidden;
+        }
+        
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 50%;
             top: 0;
             bottom: 0;
-            width: 2px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            width: 4px;
+            background: linear-gradient(180deg, var(--primary-color), var(--secondary-color), var(--primary-color));
+            transform: translateX(-50%);
+            border-radius: 2px;
+            box-shadow: 0 0 20px rgba(23, 162, 184, 0.3);
         }
         
         .timeline-item {
             position: relative;
-            margin-bottom: 2rem;
-            padding-left: 80px;
+            /* margin-bottom: 4rem; */
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         
-        .timeline-item::before {
+        .timeline-item.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .timeline-item:nth-child(odd) {
+            padding-right: 50%;
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 3rem;
+            transform: translateX(-20px);
+        }
+        
+        .timeline-item:nth-child(even) {
+            padding-left: 50%;
+            text-align: left;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 3rem;
+            transform: translateX(20px);
+        }
+        
+        .timeline-item.animate .timeline-content {
+            transform: translateX(0);
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            transform: translateX(-50%);
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px rgba(23, 162, 184, 0.2), 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-marker::before {
             content: '';
             position: absolute;
-            left: 21px;
-            top: 8px;
-            width: 18px;
-            height: 18px;
-            background: var(--primary-color);
+            top: 50%;
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            background: white;
             border-radius: 50%;
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px var(--primary-color);
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item:hover .timeline-marker {
+            transform: translateX(-50%) scale(1.2);
+            box-shadow: 0 0 0 8px rgba(23, 162, 184, 0.3), 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .timeline-item:hover .timeline-marker::before {
+            opacity: 1;
         }
         
         .timeline-year {
-            font-size: 1.1rem;
-            font-weight: 700;
+            display: inline-block;
+            font-size: 1.2rem;
+            font-weight: 800;
             color: var(--primary-color);
-            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+        
+        .timeline-year::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            transition: width 0.6s ease;
+        }
+        
+        .timeline-item.animate .timeline-year::after {
+            width: 100%;
         }
         
         .timeline-content {
             background: white;
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            box-shadow: var(--shadow-sm);
-            border-left: 3px solid var(--primary-color);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(23, 162, 184, 0.1);
+            position: relative;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border: 12px solid transparent;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -24px;
+            border-left-color: white;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -24px;
+            border-right-color: white;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-8px) !important;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary-color);
         }
         
         .timeline-content p {
             margin: 0;
-            color: var(--gray-600);
-            font-size: 0.9rem;
+            color: var(--gray-700);
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 1.6;
         }
         
+        .timeline-icon {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 12px rgba(23, 162, 184, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-icon {
+            right: auto;
+            left: 20px;
+        }
+        
+        .timeline-content:hover .timeline-icon {
+            transform: rotate(360deg) scale(1.1);
+        }
+        
+        /* Floating particles animation */
+        /* .timeline-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(23, 162, 184, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(32, 201, 151, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(23, 162, 184, 0.05) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+            pointer-events: none;
+        } */
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(120deg); }
+            66% { transform: translateY(10px) rotate(240deg); }
+        }
+        
+        /* Pulse animation for timeline line */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 20px rgba(23, 162, 184, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(23, 162, 184, 0.6); }
+            100% { box-shadow: 0 0 20px rgba(23, 162, 184, 0.3); }
+        }
+        
+        .timeline-container::before {
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            .timeline::before {
-                left: 15px;
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding-left: 3rem;
+                padding-right: 1rem;
+                text-align: left;
             }
             
-            .timeline-item {
-                padding-left: 50px;
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 0;
+                margin-right: 0;
+                transform: translateX(0);
             }
             
-            .timeline-item::before {
-                left: 6px;
+            .timeline-container::before {
+                left: 1.5rem;
+            }
+            
+            .timeline-marker {
+                left: 1.5rem;
+            }
+            
+            .timeline-content::before {
+                display: none;
+            }
+            
+            .timeline-icon {
+                right: 20px !important;
+                left: auto !important;
+            }
+        }
+        
+        /* Stagger animation delays */
+        .timeline-item:nth-child(1) { transition-delay: 0.1s; }
+        .timeline-item:nth-child(2) { transition-delay: 0.2s; }
+        .timeline-item:nth-child(3) { transition-delay: 0.3s; }
+        .timeline-item:nth-child(4) { transition-delay: 0.4s; }
+        .timeline-item:nth-child(5) { transition-delay: 0.5s; }
+        .timeline-item:nth-child(6) { transition-delay: 0.6s; }
+
+        .brand-name {
+            font-size: 68px;
+            font-weight: 800;
+        }
+
+        .brand-name .light {
+            font-weight: 100 !important;
+        }
+
+        .brand-name .ai {
+            color: rgba(255, 255, 255, 0.641);
+            font-weight: 600;
+        }
+
+        .tagline {
+            font-size: 22px;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 576px) {
+            .brand-name {
+                font-size: 36px;
+            }
+
+            .tagline {
+                font-size: 16px;
             }
         }
     </style>
@@ -83,109 +376,156 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="#">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <!-- Left: Logo -->
+            <a class="navbar-brand me-4" href="#home">
                 <img src="assets/gurujana-logo.gif" alt="GURU & JANA" height="70">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
+
+            <!-- Center: Menu -->
+            <div class="d-none d-lg-block flex-grow-1 text-center">
+                <ul class="navbar-nav d-inline-flex gap-4">
                     <li class="nav-item">
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#employeeModal">AI TOOLS ACCESS</button>
+                        <a class="nav-link text-nowrap text-black" style="font-size: large; font-weight: 600;" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-nowrap text-black" style="font-size: large; font-weight: 600;" href="#about">Our Story</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-nowrap text-black" style="font-size: large; font-weight: 600;" href="#services">AI Services</a>
                     </li>
                 </ul>
             </div>
+
+            <!-- Right: Button -->
+            <div class="d-none d-lg-block">
+                <button class="btn btn-primary px-4 rounded-3" data-bs-toggle="modal" data-bs-target="#employeeModal">
+                    AI TOOLS ACCESS
+                </button>
+            </div>
+
+            <!-- Mobile toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            
         </div>
     </nav>
 
-    <!-- Modal -->
-    <div class="modal fade" id="employeeModal" tabindex="-1" aria-labelledby="employeeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="employeeModalLabel">Employee Login</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                <div class="">
-                    <div class="text-center mb-4">
-                    <h2 class="section-title">Employee Portal Access</h2>
-                    <p class="section-subtitle">Secure access to AI-powered CA tools for authorized personnel</p>
-                    </div>
 
-                    <!-- Login Form -->
-                    <div class="login-form-container">
-                    <form class="login-form">
-                        <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                            <label class="form-label">Employee ID</label>
-                            <input type="text" class="form-control" placeholder="Enter your Employee ID">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                            <label class="form-label">Password</label>
-                            <input type="password" class="form-control" placeholder="Enter your Password">
-                            </div>
-                        </div>
-                        </div>
-                        <div class="form-options d-flex justify-content-between align-items-center my-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="rememberMe">
-                            <label class="form-check-label" for="rememberMe">Remember me</label>
-                        </div>
-                        <a href="#" class="forgot-password">Forgot Password?</a>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-lg w-100">
-                        <i class="fas fa-sign-in-alt me-2"></i>Access Dashboard
-                        </button>
-                    </form>
-                    </div>
-
-                    <div class="login-info mt-4">
-                    <div class="info-card d-flex align-items-start mb-3">
-                        <i class="fas fa-shield-alt fa-2x me-3 mt-1"></i>
-                        <div>
-                        <h6>Secure Access</h6>
-                        <p class="mb-0">Multi-factor authentication ensures your data security</p>
-                        </div>
-                    </div>
-                    <div class="info-card d-flex align-items-start">
-                        <i class="fas fa-clock fa-2x me-3 mt-1"></i>
-                        <div>
-                        <h6>24/7 Availability</h6>
-                        <p class="mb-0">Access AI tools anytime, anywhere</p>
-                        </div>
-                    </div>
-                    </div>
-                </div>
+    <div class="modal fade" id="portraitVideoModal" tabindex="-1" aria-labelledby="portraitVideoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 400px;"> <!-- adjust width here -->
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="portraitVideoModalLabel">Welcom from Guru</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0">
+                <div class="portrait-video-container">
+                <video id="portraitVideo" controls>
+                    <source src="static/video/Guru AI Video.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
                 </div>
             </div>
-        </div>
+            </div>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="employeeModal" tabindex="-1" aria-labelledby="employeeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="employeeModalLabel">Employee Login</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                    <div class="">
+                        <div class="text-center mb-4">
+                        <h2 class="section-title">Employee Portal Access</h2>
+                        <p class="section-subtitle">Secure access to AI-powered CA tools for authorized personnel</p>
+                        </div>
+
+                        <!-- Login Form -->
+                        <div class="login-form-container">
+                        <form class="login-form">
+                            <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                <label class="form-label">Employee ID</label>
+                                <input type="text" class="form-control" placeholder="Enter your Employee ID">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                <label class="form-label">Password</label>
+                                <input type="password" class="form-control" placeholder="Enter your Password">
+                                </div>
+                            </div>
+                            </div>
+                            <div class="form-options d-flex justify-content-between align-items-center my-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                            </div>
+                            <a href="#" class="forgot-password">Forgot Password?</a>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg w-100">
+                            <i class="fas fa-sign-in-alt me-2"></i>Access Dashboard
+                            </button>
+                        </form>
+                        </div>
+
+                        <div class="login-info mt-4">
+                        <div class="info-card d-flex align-items-start mb-3">
+                            <i class="fas fa-shield-alt fa-2x me-3 mt-1"></i>
+                            <div>
+                            <h6>Secure Access</h6>
+                            <p class="mb-0">Multi-factor authentication ensures your data security</p>
+                            </div>
+                        </div>
+                        <div class="info-card d-flex align-items-start">
+                            <i class="fas fa-clock fa-2x me-3 mt-1"></i>
+                            <div>
+                            <h6>24/7 Availability</h6>
+                            <p class="mb-0">Access AI tools anytime, anywhere</p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
     </div>
 
     <!-- Hero Section Option 2: Interactive Dashboard Preview -->
-    <section id="home" class="hero-section" style="margin-top: 5rem;">
-        <div class="container">
+    <section id="home" class="hero-section mt-5 mt-md-3">
+        <div class="mx-3 mx-md-5">
             <div class="row align-items-center min-vh-100">
                 <div class="col-lg-6">
                     <div class="hero-content">
                         <div class="hero-tag"><i class="fas fa-robot me-2"></i>
                             AI-Powered Excellence
                         </div>
-                        <h1 class="hero-title" style="margin-bottom: 0px;">GuruJana.ai<br>
+                        <div class="brand-name">
+                            <span class="text-white">Guru</span><span class="light">Jana</span><span class="ai">.ai</span>
+                        </div>
+                        <div class="tagline pb-5">
+                            Your Finance, Backed by Human Insight & Speed of AI
+                        </div>
+                        <!-- <h1 class="hero-title" style="margin-bottom: 0px;">GuruJana.ai<br>
                             <span class=""></span>
                         </h1>
                         <b>
                             <p class="hero-description">Your Finance, Backed by Human Insight & Speed of AI</p>
-                        </b>
+                        </b> -->
                         <div class="achievement-grid">
                             <div class="achievement-item">
                                 <div class="achievement-icon">
@@ -207,7 +547,7 @@
                             </div>
                         </div>
                         <div class="cta-section">
-                            <a href="#" class="btn btn-primary btn-lg">
+                            <a href="#" class="btn btn-outline-primary btn-lg" data-bs-toggle="modal" data-bs-target="#portraitVideoModal">
                                 <i class="fas fa-play me-2"></i>Welcome from Guru
                             </a>
                             <a href="#login" class="btn btn-outline-light btn-lg">
@@ -216,7 +556,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-6">
                     <div class="dashboard-preview">
                         <div class="preview-header">
@@ -225,32 +565,52 @@
                                 <div class="control-dot yellow"></div>
                                 <div class="control-dot green"></div>
                             </div>
-                            <div class="header-title">AI Dashboard</div>
+                            <!-- <div class="header-title">AI Dashboard</div> -->
                         </div>
                         
                         <div class="preview-content">
                             <div class="dashboard-nav">
                                 <div class="nav-item active" data-tab="overview">
-                                    <i class="fas fa-chart-pie"></i>
-                                    <span>Overview</span>
+                                    <i class="fas fa-star"></i>
+                                    <span>Why Us?</span>
                                 </div>
                                 <div class="nav-item" data-tab="taxation">
-                                    <i class="fas fa-calculator"></i>
-                                    <span>Taxation</span>
+                                    <i class="fas fa-leaf"></i>
+                                    <span>Culture</span>
                                 </div>
                                 <div class="nav-item" data-tab="auditing">
-                                    <i class="fas fa-search"></i>
-                                    <span>Auditing</span>
+                                    <i class="fas fa-trophy"></i>
+                                    <span>Impact</span>
                                 </div>
                                 <div class="nav-item" data-tab="compliance">
-                                    <i class="fas fa-shield-alt"></i>
-                                    <span>Compliance</span>
+                                    <i class="fas fa-chart-bar"></i>
+                                    <span>Numbers</span>
                                 </div>
                             </div>
-                            
+
                             <div class="dashboard-content">
                                 <div class="content-panel active" id="overview">
-                                    <div class="panel-header">
+                                    <!-- <div class="panel-header">
+                                        <h3>Tax AI Assistant</h3>
+                                        <div class="ai-badge">AI Powered</div>
+                                    </div> -->
+                                    <div class="feature-list">
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Proactive by Design</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Evolving with technology</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Tailored solutions for every client</span>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- <div class="panel-header">
                                         <h3>AI Analytics Overview</h3>
                                         <div class="status-indicator">
                                             <div class="status-dot"></div>
@@ -270,70 +630,70 @@
                                             <div class="metric-value">156</div>
                                             <div class="metric-label">Cases</div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 
                                 <div class="content-panel" id="taxation">
-                                    <div class="panel-header">
+                                    <!-- <div class="panel-header">
                                         <h3>Tax AI Assistant</h3>
                                         <div class="ai-badge">AI Powered</div>
-                                    </div>
+                                    </div> -->
                                     <div class="feature-list">
                                         <div class="feature-item">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Income Tax Calculations</span>
+                                            <span>Open, Cabin-less Offices</span>
                                         </div>
                                         <div class="feature-item">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>TDS/TCS Management</span>
+                                            <span>Solar Powered</span>
                                         </div>
                                         <div class="feature-item">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Tax Planning Strategies</span>
+                                            <span>Doing business responsibly</span>
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="content-panel" id="auditing">
-                                    <div class="panel-header">
+                                    <!-- <div class="panel-header">
                                         <h3>Audit Intelligence</h3>
                                         <div class="ai-badge">Smart Analysis</div>
-                                    </div>
+                                    </div> -->
                                     <div class="feature-list">
                                         <div class="feature-item">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Risk Assessment</span>
+                                            <span>Jeevika Foundation</span>
                                         </div>
                                         <div class="feature-item">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Audit Trail Analysis</span>
+                                            <span>Celebrated for our work and culture</span>
                                         </div>
                                         <div class="feature-item">
                                             <i class="fas fa-check-circle"></i>
-                                            <span>Compliance Verification</span>
+                                            <span>Results that speak for themselves</span>
                                         </div>
                                     </div>
                                 </div>
                                 
                                 <div class="content-panel" id="compliance">
-                                    <div class="panel-header">
+                                    <!-- <div class="panel-header">
                                         <h3>Compliance Monitor</h3>
                                         <div class="ai-badge">Real-time</div>
-                                    </div>
-                                    <div class="feature-list">
-                                        <div class="feature-item">
-                                            <i class="fas fa-check-circle"></i>
-                                            <span>Regulatory Updates</span>
+                                    </div> -->
+                                    <div class="metrics-grid">
+                                        <div class="metric-card">
+                                            <div class="metric-value">650+</div>
+                                            <div class="metric-label">Team Members</div>
                                         </div>
-                                        <div class="feature-item">
-                                            <i class="fas fa-check-circle"></i>
-                                            <span>Deadline Tracking</span>
+                                        <div class="metric-card">
+                                            <div class="metric-value">10+</div>
+                                            <div class="metric-label">AI Departments</div>
                                         </div>
-                                        <div class="feature-item">
-                                            <i class="fas fa-check-circle"></i>
-                                            <span>Document Management</span>
+                                        <div class="metric-card">
+                                            <div class="metric-value">500+</div>
+                                            <div class="metric-label">Active Clients</div>
                                         </div>
-                                    </div>
+                                    </div>                                    
                                 </div>
                             </div>
                         </div>
@@ -343,18 +703,18 @@
         </div>
     </section>
 
-    <!-- About Section with Timeline -->
+    <!-- About Section with Enhanced Zig-Zag Timeline -->
     <section id="about" class="about-section py-5 bg-light">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                     <div class="about-content">
                         <h2 class="section-title">Our Story</h2>
                         <p class="lead">Transforming how finance professionals work, powered by intelligent AI.</p>
                         <p>We are redefining chartered accountancy by integrating artificial intelligence into core financial processes. With advanced tools and AI-led systems, we enhance speed, accuracy, and regulatory compliance across every domain of our practice.</p>
                         <p>Our story began in 2003 with a bold vision. In 2013, we became the first in India to file digital tax returns. Since then, we've continued leading with innovation.</p>
                         <p>Deeply rooted in India's cultural heritage, Guru & Jana is built on values, yet driven by change. In 2025, we embraced AI not as a tool, but as a partner in transforming how finance is done.</p>
-                        <div class="about-features">
+                        <!-- <div class="about-features">
                             <div class="feature-item">
                                 <i class="fas fa-check-circle text-primary me-3"></i>
                                 <span>ICAI Certified AI Solutions</span>
@@ -367,46 +727,64 @@
                                 <i class="fas fa-check-circle text-primary me-3"></i>
                                 <span>Continuous Learning & Updates</span>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="timeline">
+                <div class="col-lg-12">
+                    <div class="timeline-container">
                         <div class="timeline-item">
-                            <div class="timeline-year">2025</div>
+                            <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <p>AI introduced into all CA departments</p>
+                                <div class="timeline-icon"><i class="fas fa-heart"></i></div>
+                                <div class="timeline-year">2003</div>
+                                <p>Guru & Jana founded on Valentine's Day</p>
+                            </div>
+                        </div>
+    
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-icon"><i class="fas fa-leaf"></i></div>
+                                <div class="timeline-year">2010</div>
+                                <p>Firm becomes fully paperless</p>
                             </div>
                         </div>
                         
                         <div class="timeline-item">
-                            <div class="timeline-year">2020</div>
+                            <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <p>Partner featured in Breakthrough</p>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-year">2013</div>
-                            <div class="timeline-content">
+                                <div class="timeline-icon"><i class="fas fa-trophy"></i></div>
+                                <div class="timeline-year">2013</div>
                                 <p>First in India to file digital tax returns</p>
                             </div>
                         </div>
-
+                        
                         <div class="timeline-item">
-                            <div class="timeline-year">2010</div>
+                            <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <p>Firm becomes fully paperless</p>
+                                <div class="timeline-icon"><i class="fas fa-globe"></i></div>
+                                <div class="timeline-year">2016</div>
+                                <p>Joined HLB International Network</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-icon"><i class="fas fa-book"></i></div>
+                                <div class="timeline-year">2016</div>
+                                <p>Published national bestseller The God in the Boardroom</p>
                             </div>
                         </div>                        
 
                         <div class="timeline-item">
-                            <div class="timeline-year">2003</div>
+                            <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <p>Guru & Jana founded on Valentine's Day</p>
+                                <div class="timeline-icon"><i class="fas fa-robot"></i></div>
+                                <div class="timeline-year">2025</div>
+                                <p>AI introduced into all CA departments</p>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
             </div>
@@ -553,5 +931,43 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>    
     <script src="static/js/script.js"></script>
+    
+    <script>
+        // Enhanced Timeline Animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            const observerOptions = {
+                threshold: 0.2,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const timelineObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, observerOptions);
+            
+            timelineItems.forEach(item => {
+                timelineObserver.observe(item);
+            });
+        });
+    </script>
+
+    <script>
+  const portraitModal = document.getElementById('portraitVideoModal');
+  const portraitVideo = document.getElementById('portraitVideo');
+
+  portraitModal.addEventListener('shown.bs.modal', () => {
+    portraitVideo.play();
+  });
+
+  portraitModal.addEventListener('hide.bs.modal', () => {
+    portraitVideo.pause();
+    portraitVideo.currentTime = 0;
+  });
+</script>
 </body>
 </html>
