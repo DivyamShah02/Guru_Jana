@@ -302,6 +302,9 @@
         
         /* Mobile Responsive */
         @media (max-width: 768px) {
+            .timeline-item {
+                margin-bottom: 2rem;
+            }
             .timeline-item:nth-child(odd),
             .timeline-item:nth-child(even) {
                 padding-left: 3rem;
@@ -418,7 +421,9 @@
     <div class="modal fade" id="portraitVideoModal" tabindex="-1" aria-labelledby="portraitVideoModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" style="max-width: 400px;"> <!-- adjust width here -->
             <div class="modal-content">
-            
+            <div class="modal-header">                
+                <button type="button" class="btn-close p-0" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
             <div class="modal-body p-0">
                 <div class="portrait-video-container">
                 <video id="portraitVideo" controls>
@@ -547,14 +552,14 @@
                             <a href="#" class="btn btn-outline-primary btn-lg" data-bs-toggle="modal" data-bs-target="#portraitVideoModal">
                                 <i class="fas fa-play me-2"></i>Welcome from Guru
                             </a>
-                            <a href="#login" class="btn btn-outline-light btn-lg">
+                            <a href="#login" class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#employeeModal">
                                 <i class="fas fa-sign-in-alt me-2"></i>Employee Portal
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-6 px-5 mt-5">
+                <div class="col-lg-6 px-0 px-md-5 mt-5">
                     <div class="dashboard-preview">
                         <div class="preview-header">
                             <div class="header-controls">
@@ -566,7 +571,25 @@
                         </div>
                         
                         <div class="preview-content">
-                            <div class="dashboard-nav">
+                            <div class="dashboard-nav row">
+                                <div class="nav-item active col-5 col-md-3" data-tab="overview">
+                                    <i class="fas fa-star"></i>
+                                    <span>Why Us?</span>
+                                </div>
+                                <div class="nav-item col-6 col-md-3" data-tab="taxation">
+                                    <i class="fas fa-leaf"></i>
+                                    <span>Culture</span>
+                                </div>
+                                <div class="nav-item col-5 col-md-3" data-tab="auditing">
+                                    <i class="fas fa-trophy"></i>
+                                    <span>Impact</span>
+                                </div>
+                                <div class="nav-item col-6 col-md-3" data-tab="compliance">
+                                    <i class="fas fa-chart-bar"></i>
+                                    <span>Numbers</span>
+                                </div>
+                            </div>
+                            <!-- <div class="dashboard-nav">
                                 <div class="nav-item active" data-tab="overview">
                                     <i class="fas fa-star"></i>
                                     <span>Why Us?</span>
@@ -583,7 +606,7 @@
                                     <i class="fas fa-chart-bar"></i>
                                     <span>Numbers</span>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="dashboard-content">
                                 <div class="content-panel active" id="overview">
