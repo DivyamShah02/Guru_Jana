@@ -246,6 +246,21 @@ body {
   transform: translateY(-2px);
 }
 
+.btn-outline-primary:hover {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+  background: transparent;
+  border-color: transparent;
+  color: white;
+  
+}
+
 /* Dashboard Preview */
 .dashboard-preview {
   position: relative;
@@ -332,7 +347,7 @@ body {
 
 .dashboard-content {
   position: relative;
-  min-height: 200px;
+  min-height: 225px;
 }
 
 .content-panel {
