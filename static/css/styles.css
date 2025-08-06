@@ -349,6 +349,16 @@ body {
   position: relative;
   min-height: 225px;
 }
+@media (max-width: 768px) {
+ .dashboard-content { 
+  min-height: 300px;
+} 
+
+  .hero-section {
+    margin-top: 7rem !important;
+  }
+}
+
 
 .content-panel {
   position: absolute;

@@ -386,9 +386,16 @@
                 <img src="assets/gurujana-logo.gif" alt="GURU & JANA" height="70">
             </a>
 
-            <!-- Center: Menu -->
-            <div class="d-none d-lg-block flex-grow-1 text-center">
-                <ul class="navbar-nav d-inline-flex gap-4">
+            <!-- Toggler for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapse menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <!-- Center: Menu -->
+                <ul class="navbar-nav mx-auto text-center gap-lg-4">
                     <li class="nav-item">
                         <a class="nav-link text-nowrap text-black" style="font-size: large; font-weight: 600;" href="#home">Home</a>
                     </li>
@@ -399,24 +406,17 @@
                         <a class="nav-link text-nowrap text-black" style="font-size: large; font-weight: 600;" href="#services">AI Services</a>
                     </li>
                 </ul>
+
+                <!-- Right: Button -->
+                <div class="d-lg-block d-flex justify-content-center mt-3 mt-lg-0">
+                    <button class="btn btn-primary px-4 rounded-3" data-bs-toggle="modal" data-bs-target="#employeeModal">
+                        AI TOOLS ACCESS
+                    </button>
+                </div>
+
             </div>
-
-            <!-- Right: Button -->
-            <div class="d-none d-lg-block">
-                <button class="btn btn-primary px-4 rounded-3" data-bs-toggle="modal" data-bs-target="#employeeModal">
-                    AI TOOLS ACCESS
-                </button>
-            </div>
-
-            <!-- Mobile toggler -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            
         </div>
     </nav>
-
 
     <div class="modal fade" id="portraitVideoModal" tabindex="-1" aria-labelledby="portraitVideoModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" style="max-width: 400px;"> <!-- adjust width here -->
