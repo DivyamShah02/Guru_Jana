@@ -85,7 +85,8 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: var(--primary-color);
+  /* background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); */
   border: none;
   border-radius: 8px;
   font-weight: 600;
@@ -127,7 +128,8 @@ body {
 }
 
 .welcome-banner {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: var(--primary-color);
+  /* background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); */
   color: white;
   border-radius: 16px;
   padding: 3rem;
@@ -201,7 +203,8 @@ body {
 }
 
 .category-tabs .nav-link.active {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: var(--primary-color);
+  /* background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); */
   color: white;
   box-shadow: var(--shadow);
 }
@@ -265,7 +268,8 @@ body {
 .icon-circle {
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: var(--primary-color);
+  /* background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); */
   border-radius: 50%;
   display: flex;
   align-items: center;
