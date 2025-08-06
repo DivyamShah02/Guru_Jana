@@ -426,9 +426,9 @@ body {
     gap: 0.25rem;
   }
 
-  .tab-text {
+  /* .tab-text {
     display: none;
-  }
+  } */
 
   .coming-soon-container {
     padding: 2rem 1rem;
